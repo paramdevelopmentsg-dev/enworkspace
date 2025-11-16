@@ -39,10 +39,10 @@ def get_weather_report(city:str):
 
 
 @function_tool
-def send_email(body:str):
+def send_email(body:str,to_address:str):
     sg = sendgrid.SendGridAPIClient(api_key=sendgrid_api_key)
     from_email = Email("paramesh@***.com")  # Change to your verified sender
-    to_email = To("parameshskills@gmail.com")  # Change to your recipient
+    to_email = To(to_address)  # Change to your recipient
     content = Content("text/plain", body)
     mail = Mail(from_email, to_email, "Travel Planner", content).get()
     sg.client.mail.send.post(request_body=mail)
