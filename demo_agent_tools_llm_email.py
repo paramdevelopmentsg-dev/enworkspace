@@ -11,6 +11,7 @@ load_dotenv(override=True)
 
 
 google_api_key = os.getenv('GOOGLE_API_KEY')
+sendgrid_api_key= os.getenv('SENDGRID_API_KEY')
 
 
 if google_api_key:
